@@ -37,5 +37,23 @@
                 </li>
             </ul>
         </li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-airplay"></i>
+                <div>Brands</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="{{route('brands.create')}}" class="sidenav-link">
+                        <div>Add Brand</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="{{route('brands.index')}}" class="sidenav-link">
+                        <div>All Brands</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
