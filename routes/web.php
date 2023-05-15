@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +16,7 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::middleware([
     'auth:sanctum',
@@ -26,5 +24,10 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+
     Route::resource('categories',CategoryController::class);
+    Route::get('/category-status{id}',[CategoryController::class,'status'])->name('category-status');
+
+    Route::resource('brands',BrandController::class);
+    Route::get('/brand-status{id}',[BrandController::class,'status'])->name('brand-status');
 });

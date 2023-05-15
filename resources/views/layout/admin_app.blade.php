@@ -15,9 +15,17 @@
 
     <!-- Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+    <!-- datatables -->
+    <link rel="stylesheet" href="{{asset('adminAsset')}}/libs/datatables/datatables.css">
+
+    <!-- bootstrap-tagsinput -->
+    <link rel="stylesheet" href="{{asset('adminAsset')}}/libs/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
     <!-- Core stylesheets -->
     <link rel="stylesheet" href="{{asset('adminAsset')}}/css/style.css" class="style-link">
+
 
 </head>
 
@@ -62,13 +70,23 @@
 <!-- [ Layout wrapper] End -->
 <!-- Toastr -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Sweetalert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
 
 <!-- Core scripts -->
 <script src="{{asset('adminAsset')}}/js/vendor.js"></script>
 
+<!-- datatables -->
+<script src="{{asset('adminAsset')}}/libs/datatables/datatables.js"></script>
+<script src="{{asset('adminAsset')}}/js/pages/tables_datatables.js"></script>
+
 <!-- apexcharts -->
 <script src="{{asset('adminAsset')}}/libs/apexchart/apexcharts.min.js"></script>
 <script src="{{asset('adminAsset')}}/js/pages/dashboard-ecommerce.js"></script>
+
+<!-- bootstrap-tagsinput -->
+<script src="{{asset('adminAsset')}}/libs/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="{{asset('adminAsset')}}/js/pages/forms_selects.js"></script>
 <!-- Demo -->
 <script src="{{asset('adminAsset')}}/js/script.js"></script>
 

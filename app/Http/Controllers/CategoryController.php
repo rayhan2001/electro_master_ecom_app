@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.category.index');
+        $categories = Category::orderBy('id', 'desc')->get();
+        return view('admin.category.index',compact('categories'));
     }
 
     /**
@@ -76,7 +77,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category =Category::find($id);
+        $categories = Category::whereNull('parent_cat_id')->get();
+        return view('admin.category.edit',compact('category','categories'));
     }
 
     /**
@@ -88,7 +91,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->category_name = $request->category_name;
+        $category->parent_cat_id = $request->parent_cat_id;
+        if ($request->file('image')){
+            if ($category->image !=null){
+                unlink($category->image);
+            }
+            $category->image = $this->saveImage($request);
+        }
+        $category->status = $request->status;
+        $category->save();
+        return response()->json(['status'=>200]);
     }
 
     /**
@@ -99,6 +113,27 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        if ($category->image){
+            unlink($category->image);
+        }
+        $category->delete();
+        return response()->json([
+            'status'=>200
+        ]);
+    }
+
+    public function status($id){
+        $category = Category::find($id);
+        if ($category->status == 1) {
+            $category->status = 0;
+        } else {
+            $category->status = 1;
+        }
+        $category->save();
+
+        return response()->json([
+            'status'=>200
+        ]);
     }
 }
