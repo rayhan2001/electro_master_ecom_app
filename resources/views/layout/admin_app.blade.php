@@ -23,6 +23,11 @@
     <!-- bootstrap-tagsinput -->
     <link rel="stylesheet" href="{{asset('adminAsset')}}/libs/bootstrap-tagsinput/bootstrap-tagsinput.css">
 
+    <!-- select -->
+    <link rel="stylesheet" href="{{asset('adminAsset')}}/libs/select2/select2.css">
+
+
+
     <!-- Core stylesheets -->
     <link rel="stylesheet" href="{{asset('adminAsset')}}/css/style.css" class="style-link">
 
@@ -87,6 +92,10 @@
 <!-- bootstrap-tagsinput -->
 <script src="{{asset('adminAsset')}}/libs/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 <script src="{{asset('adminAsset')}}/js/pages/forms_selects.js"></script>
+
+<!-- select2 -->
+<script src="{{asset('adminAsset')}}/libs/select2/select2.js"></script>
+
 <!-- Demo -->
 <script src="{{asset('adminAsset')}}/js/script.js"></script>
 

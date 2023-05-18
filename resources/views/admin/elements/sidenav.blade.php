@@ -55,5 +55,23 @@
                 </li>
             </ul>
         </li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-airplay"></i>
+                <div>Products</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="{{route('products.create')}}" class="sidenav-link">
+                        <div>Add Product</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="{{route('products.index')}}" class="sidenav-link">
+                        <div>All Products</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
