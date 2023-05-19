@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,8 @@ Route::middleware([
 
     Route::resource('brands',BrandController::class);
     Route::get('/brand-status{id}',[BrandController::class,'status'])->name('brand-status');
+
+    Route::resource('products',ProductController::class);
+    Route::get('/products/get-sub-category/{cat_id}', [ProductController::class, 'getSubCategory']);
+//    Route::get('/brand-status{id}',[BrandController::class,'status'])->name('brand-status');
 });

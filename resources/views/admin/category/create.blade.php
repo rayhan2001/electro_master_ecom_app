@@ -50,6 +50,7 @@
     $(document).ready(function() {
         $('#categoryBtn').click(function (e) {
             e.preventDefault();
+            alert('gdsgssgs');
             $('#categoryBtn').attr("disabled", true);
             $('#categoryBtn').html("Processing...");
 
